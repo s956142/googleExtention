@@ -1,0 +1,18 @@
+{
+  "name": "lasyGuy",
+  "manifest_version": 2,
+  "version": "1.0",
+  "description": "我的第一個Chrome擴充套件程式",
+  "background": {
+    "scripts": ["popup.js"]
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "images/logo.png",
+      "24": "images/logo.png",
+      "32": "images/logo.png"
+    },
+    "default_title": "我的日曆",
+    "default_popup": "popup.html"
+  }
+}
