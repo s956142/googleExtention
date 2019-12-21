@@ -32,12 +32,12 @@ var Calendar = function() {
     return _this;
   };
   var initEvent = function() {
-    console.warn("initEvent");
+    console.log("initEvent");
 
     document
       .querySelector(".left-btn.week-btn")
       .addEventListener("click", function() {
-        console.warn("left");
+        console.log("left");
         set.startWith--;
         set.startWith = set.startWith < 0 ? set.startWith + 7 : set.startWith;
         setContent(currenMonthDate.getTime());
@@ -45,7 +45,7 @@ var Calendar = function() {
     document
       .querySelector(".right-btn.week-btn")
       .addEventListener("click", function() {
-        console.warn("right");
+        console.log("right");
         set.startWith++;
         set.startWith = set.startWith > 6 ? set.startWith - 7 : set.startWith;
         setContent(currenMonthDate.getTime());
@@ -54,7 +54,7 @@ var Calendar = function() {
       .querySelector(".left-btn.month-btn")
       .addEventListener("click", function() {
         updateCurrenMonthDate(-1);
-        console.warn("right");
+        console.log("right");
         setContent(currenMonthDate.getTime());
       });
     document
@@ -86,7 +86,7 @@ var Calendar = function() {
     var container = document.getElementById(set.contentId);
     container.innerHTML = "";
     var weekList = generateMonth(time);
-    console.warn("weekList", weekList);
+    console.log("weekList", weekList);
     weekList.forEach(function(week) {
       container.appendChild(week);
     });
@@ -125,9 +125,9 @@ var Calendar = function() {
     } else {
       curDate = new Date(nowTime());
     }
-    console.warn("curDate", curDate);
+    console.log("curDate", curDate);
     tmpTimeObj = generateTimeObj(curDate);
-    console.warn("tmpTimeObj", tmpTimeObj);
+    console.log("tmpTimeObj", tmpTimeObj);
     setMonthTitle(tmpTimeObj);
     setDayWord();
     curDate.setDate(1);
